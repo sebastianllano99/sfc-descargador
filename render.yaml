@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: sfc-descargador
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: CHROME_BIN
+        value: /usr/bin/chromium
+      - key: CHROMEDRIVER_PATH
+        value: /usr/bin/chromedriver
+      - key: PYTHONUNBUFFERED
+        value: "1"
+    healthCheckPath: /healthz
